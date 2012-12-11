@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  population: MyString
+  median_age: 9.99
+  life_expectancy: 9.99
+  gross_domestic_product: 9.99
+  mandatory_military_service: false
+
+two:
+  name: MyString
+  population: MyString
+  median_age: 9.99
+  life_expectancy: 9.99
+  gross_domestic_product: 9.99
+  mandatory_military_service: false

@@ -1,0 +1,33 @@
+<h1>Listing countries</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Population</th>
+    <th>Median age</th>
+    <th>Life expectancy</th>
+    <th>Gross domestic product</th>
+    <th>Mandatory military service</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @countries.each do |country| %>
+  <tr>
+    <td><%= country.name %></td>
+    <td><%= country.population %></td>
+    <td><%= country.median_age %></td>
+    <td><%= country.life_expectancy %></td>
+    <td><%= number_to_currency(country.gross_domestic_product) %></td>
+    <td><%= country.mandatory_military_service %></td>
+    <td><%= link_to 'Show', country %></td>
+    <td><%= link_to 'Edit', edit_country_path(country) %></td>
+    <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Country', new_country_path %>

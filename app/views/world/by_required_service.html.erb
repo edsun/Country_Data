@@ -1,0 +1,4 @@
+<% if @countries.empty? %>
+  <p>No countries with mandatory military service.</p>
+<% end %>
+<%= render :partial => 'country', :collection => @countries, :as => 'country'  %>

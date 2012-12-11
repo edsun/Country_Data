@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CountryData</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="search">
+    <% if session[:keyword] %>
+      <p>Your last search was for: <%= session[:keyword] %></p>
+    <% else %>
+      <p>You are searching for the first time.</p>
+    <% end %>
+    <%= form_tag results_path do %>
+      <%= label_tag 'keyword', 'Search' %>
+      <%= text_field_tag :keyword %>
+      <%= select_tag :my_option, options_for_select([["All Countries", 1], ["Countries with Mandatory military service", 2], ["Countries without Mandatory military service", 3]]) %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </div>
+  <ul>
+    <li><%= link_to 'Index', world_path %></li>
+    <li><%= link_to 'By Population', by_population_path %></li>
+    <li><%= link_to 'By Age', by_age_path %></li>
+    <li><%= link_to 'By Required Service', by_required_service_path %></li>
+  </ul>
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>

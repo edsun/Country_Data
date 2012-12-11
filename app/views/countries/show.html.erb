@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @country.name %>
+</p>
+
+<p>
+  <b>Population:</b>
+  <%= @country.population %>
+</p>
+
+<p>
+  <b>Median age:</b>
+  <%= @country.median_age %>
+</p>
+
+<p>
+  <b>Life expectancy:</b>
+  <%= @country.life_expectancy %>
+</p>
+
+<p>
+  <b>Gross domestic product:</b>
+  <%= number_to_currency(@country.gross_domestic_product) %>
+</p>
+
+<p>
+  <b>Mandatory military service:</b>
+  <%= @country.mandatory_military_service %>
+</p>
+
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>

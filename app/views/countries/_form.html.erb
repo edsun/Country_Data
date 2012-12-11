@@ -1,0 +1,41 @@
+<%= form_for(@country) do |f| %>
+  <% if @country.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@country.errors.count, "error") %> prohibited this country from being saved:</h2>
+
+      <ul>
+      <% @country.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.select :name, Country::ALLOWED_COUNTRIES %>
+  </div>
+  <div class="field">
+    <%= f.label :population %><br />
+    <%= f.text_field :population %>
+  </div>
+  <div class="field">
+    <%= f.label :median_age %><br />
+    <%= f.text_field :median_age %>
+  </div>
+  <div class="field">
+    <%= f.label :life_expectancy %><br />
+    <%= f.text_field :life_expectancy %>
+  </div>
+  <div class="field">
+    <%= f.label :gross_domestic_product %><br />
+    <%= f.text_field :gross_domestic_product %>
+  </div>
+  <div class="field">
+    <%= f.label :mandatory_military_service %><br />
+    <%= f.check_box :mandatory_military_service %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
